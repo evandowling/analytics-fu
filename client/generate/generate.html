@@ -1,0 +1,21 @@
+<html>
+<head>
+  <script src='../lib/analytics.js'></script>
+
+</head>
+
+<body>
+
+<script type='text/javascript'>
+	 intializeEventTracking('localhost:3000','1');
+  for (var i = 0; i < 100; i++) {
+    _tracker.trackEvent( {
+			page: 'http://www.google.com/' + (i % 7),
+      entrance: 'http://www.hulu.com/tv/fringe',
+			visited: '' + (i * (i % 7))
+		});
+	}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+
+span.menuItem{
+  padding: 5px 10px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #777
+}
+
+span.menuItem:hover{
+  border-color: #aaa;
+  background-color: #777;
+}
+
+span.menuItem a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+}
+
+
+div#topMenu{
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #77a;
+  padding: 10px 15px;
+
+}
+
+
+div#mainContent {
+  margin-top: 5px;
+  text-align:left;
+	padding:15px;
+	border:1px solid #333;
+	background-color:#eee;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #dde;
+}
+div.chartContainer {
+}
+
+div.chartTitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.mouseValHolder {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #808080;
+  background: #F0F0F0;
+  opacity:0.7;
+  background-color:#000;
+  color:#fff;
+  width: 200px;
+  height: 50px;
+} 
+
+

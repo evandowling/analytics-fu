@@ -1,0 +1,21 @@
+<div class="chartContainer">
+<div class="chartTitle">Referring URLs</div>
+<div id='barChart' style="width:800px;height:300px"></div>
+</div>
+
+<script type='text/javascript'>
+  var dat = [<%= @pie_data.collect{|d| "['#{d.category}',#{d.data}]"}.join(',') %>];
+ 	Event.observe(window, 'load', function() {
+	  new Proto.Chart($('barChart'), 
+	[
+    <% @pie_data.each do |d| %>
+		{data: [<%d.data.to_i.times {|i| %> [<%= "#{i},1"%>],<%}%>], label: '<%= d.category%>'},
+    <% end %>
+	],
+	{
+		pies: {show: true, autoScale: true},
+		legend: {show: true}
+
+	});
+  });
+</script>

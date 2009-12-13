@@ -1,0 +1,22 @@
+<div class="chartContainer">
+<div class="chartTitle">Aggregate Raw Events per Day</div>
+<div id='lineChart' style="width:500px;height:300px"></div>
+</div>
+
+<script type='text/javascript'>
+  var dailyData = [<%= @raw_data.collect{|d| "[#{d.first.to_i * 1000},#{d.last}]"}.join(',') %>];
+ 	Event.observe(window, 'load', function() {
+    TimeCharts.timeChart({
+			containerId:   'lineChart',
+      width: '700px',
+			height: '350px',
+			format: '%m/%d/%y',
+			data: [dailyData],
+			onHit:  function(e){
+								var msg = e.memo[0];
+      					var valDiv = $$('div.mouseValHolder')[0];
+								valDiv.innerHTML = "Date:" +  formatDate(new Date(msg.x),'%m/%d/%y',null) + "<br>" + "Clicks:" + msg.y;
+     					}
+		});
+	});
+</script>
